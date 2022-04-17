@@ -1,7 +1,7 @@
 github:
   # baseUrl: https://api.github.com # Change it if you using GitHub Enterprise Server
   repos:
-    - name: vyon-tech-devops/go-microservice-template
+    - name: gai6948/ci-analyzer-project
       tests:
         - '**/*.xml' # Test report JUnit XML path in artifact that uploaded by actions/upload-artifact
   exporter: &exporter # Can use yaml anchor
