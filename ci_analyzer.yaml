@@ -1,0 +1,14 @@
+github:
+  # baseUrl: https://api.github.com # Change it if you using GitHub Enterprise Server
+  repos:
+    - name: vyon-tech-devops/go-microservice-template
+      tests:
+        - '**/*.xml' # Test report JUnit XML path in artifact that uploaded by actions/upload-artifact
+  exporter: &exporter # Can use yaml anchor
+    local:
+      outDir: /output/ci_analyzer # default: output
+      format: json_lines # default: json. 'json' and 'json_lines' are supported.
+      maxBadRecords: 0 # (Optional) default: 0. If set > 0, skip bad record. This option should only be used for workaround.
+  lastRunStore:
+    backend: local
+    path: /output/last_run/github.json # (Optional) default: ci_analyzer/last_run/${service}.json

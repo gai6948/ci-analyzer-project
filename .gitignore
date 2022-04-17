@@ -1,0 +1,5 @@
+output/
+.dccache
+.venv/
+**cache**
+**.tfstate

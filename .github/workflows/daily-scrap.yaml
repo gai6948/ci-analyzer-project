@@ -1,0 +1,44 @@
+on:
+  schedule:
+    - cron: "50 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+
+jobs:
+  ci-analyzer-daily-scrap:
+    runs-on: ubuntu-20.04
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      S3_BUCKET_NAME: <s3_bucket_name>
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install AWS CLI V2
+        id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1.0.2
+        with:
+          arch: amd64
+          version: 2
+      - name: Try to download last run state
+        shell: bash
+        run: aws s3 cp -R s3://$S3_BUCKET_NAME/last-run-state/ output/last-run-state/
+      - name: Run CIAnalyzer
+        shell: bash
+        run: |
+          docker run \
+            --mount type=bind,src=${PWD}/output,dst=/output/ \
+            --mount type=bind,src=${PWD}/ci_analyzer.yaml,dst=/ci_analyzer.yaml \
+            -e GITHUB_TOKEN=$GITHUB_TOKEN \
+            ghcr.io/kesin11/ci_analyzer:v5 -c /ci_analyzer.yaml
+      - name: Upload results and last run state to S3
+        shell: bash
+        run: |
+          CURRENT_YEAR=$(date +%Y)
+          CURRENT_MONTH=$(date +%m)
+          CURRENT_DAY=$(date +%d)
+          aws s3 cp output/ci_analyzer/ s3://$S3_BUCKET_NAME/ci-analyzer/year=$CURRENT_YEAR/month=$CURRENT_MONTH/day=$CURRENT_DAY/
+          aws s3 cp output/last-run-state/ s3://$S3_BUCKET_NAME/last-run-state/
