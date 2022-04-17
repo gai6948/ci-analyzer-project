@@ -38,6 +38,7 @@ jobs:
       - name: Upload results and last run state to S3
         shell: bash
         run: |
+          ls -l output/
           CURRENT_YEAR=$(date +%Y)
           CURRENT_MONTH=$(date +%m)
           CURRENT_DAY=$(date +%d)
