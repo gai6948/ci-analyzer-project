@@ -42,4 +42,4 @@ jobs:
           CURRENT_MONTH=$(date +%m)
           CURRENT_DAY=$(date +%d)
           aws s3 cp output/ci_analyzer/ s3://$S3_BUCKET_NAME/ci-analyzer/year=$CURRENT_YEAR/month=$CURRENT_MONTH/day=$CURRENT_DAY/
-          aws s3 cp output/last-run-state/ s3://$S3_BUCKET_NAME/last-run-state/
+          aws s3 cp output/last_run/ s3://$S3_BUCKET_NAME/last-run-state/
