@@ -25,7 +25,7 @@ jobs:
           version: 2
       - name: Try to download last run state
         shell: bash
-        run: aws s3 cp s3://$S3_BUCKET_NAME/last-run-state/ output/last-run-state/
+        run: mkdir output && aws s3 cp s3://$S3_BUCKET_NAME/last-run-state/ output/last-run-state/
         continue-on-error: true
       - name: Run CIAnalyzer
         shell: bash
