@@ -36,7 +36,6 @@ jobs:
             -e GITHUB_TOKEN=$GITHUB_TOKEN \
             ghcr.io/kesin11/ci_analyzer:v5 -c /ci_analyzer.yaml
       - name: Upload results and last run state to S3
-        shell: bash
         run: |
           ls -l output/
           CURRENT_YEAR=$(date +%Y)
