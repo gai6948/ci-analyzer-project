@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      S3_BUCKET_NAME: <s3_bucket_name>
+      S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
@@ -25,7 +25,7 @@ jobs:
           version: 2
       - name: Try to download last run state
         shell: bash
-        run: aws s3 cp -R s3://$S3_BUCKET_NAME/last-run-state/ output/last-run-state/
+        run: aws s3 cp s3://$S3_BUCKET_NAME/last-run-state/ output/last-run-state/
       - name: Run CIAnalyzer
         shell: bash
         run: |
