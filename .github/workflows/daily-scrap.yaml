@@ -41,5 +41,6 @@ jobs:
           CURRENT_YEAR=$(date +%Y)
           CURRENT_MONTH=$(date +%m)
           CURRENT_DAY=$(date +%d)
+          echo "s3://$S3_BUCKET_NAME/ci-analyzer/year=$CURRENT_YEAR/month=$CURRENT_MONTH/day=$CURRENT_DAY/"
           aws s3 cp --recursive output/ci_analyzer/ s3://$S3_BUCKET_NAME/ci-analyzer/year=$CURRENT_YEAR/month=$CURRENT_MONTH/day=$CURRENT_DAY/
           aws s3 cp --recursive output/last_run/ s3://$S3_BUCKET_NAME/last-run-state/
