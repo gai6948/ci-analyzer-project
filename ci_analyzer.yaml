@@ -1,9 +1,9 @@
 github:
   # baseUrl: https://api.github.com # Change it if you using GitHub Enterprise Server
   repos:
-    - name: gai6948/ci-analyzer-project
+    - name: gai6948/python-microservice-template
       tests:
-        - '**/*.xml' # Test report JUnit XML path in artifact that uploaded by actions/upload-artifact
+        - '*.xml' # Test report JUnit XML path in artifact that uploaded by actions/upload-artifact
   exporter: &exporter # Can use yaml anchor
     local:
       outDir: /output/ci_analyzer # default: output
