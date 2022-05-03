@@ -1,0 +1,38 @@
+slice_name: Step Success Rate
+viz_type: pivot_table_v2
+params:
+  adhoc_filters: []
+  aggregateFunction: Sum
+  colOrder: key_a_to_z
+  datasource: 21__table
+  date_format: smart_date
+  extra_form_data: {}
+  granularity_sqla: createdat
+  groupbyColumns: []
+  groupbyRows:
+  - repository
+  - workflowname
+  - step_name
+  metrics:
+  - aggregate: null
+    column: null
+    expressionType: SQL
+    hasCustomLabel: false
+    isNew: false
+    label: "SUM(\n  CAST(\n    CASE\n      WHEN step_st..."
+    optionName: metric_fioicy0j79v_jpha84labur
+    sqlExpression: "SUM(\n  CAST(\n    CASE\n      WHEN step_status LIKE 'SUCCESS'\
+      \ THEN 1\n      ELSE 0\n    END\n  AS INT)\n) * 1.0 / CAST(\n  COUNT(1)\nAS\
+      \ INT) * 1.0"
+  metricsLayout: COLUMNS
+  order_desc: true
+  rowOrder: key_a_to_z
+  row_limit: 10000
+  time_grain_sqla: P1D
+  time_range: No filter
+  valueFormat: SMART_NUMBER
+  viz_type: pivot_table_v2
+cache_timeout: null
+uuid: 202ab070-e4b3-4bc9-9812-cf15aeaf0266
+version: 1.0.0
+dataset_uuid: 0bba67c5-364a-46f2-967d-fa9dc01e3392

@@ -1,0 +1,213 @@
+dashboard_title: CIAnalyzer -- Per Workflow
+description: null
+css: ''
+slug: null
+uuid: 0760357a-13e5-4332-a179-1568850d6e01
+position:
+  CHART-HGPUuwhFtd:
+    children: []
+    id: CHART-HGPUuwhFtd
+    meta:
+      chartId: 90
+      height: 50
+      sliceName: '- Workflow Step Contribution Trend'
+      uuid: 411ebd52-b369-4ade-8918-5cb6d5f8722c
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-G8XskONnhJ
+    type: CHART
+  CHART-SPq3MvZ4J3:
+    children: []
+    id: CHART-SPq3MvZ4J3
+    meta:
+      chartId: 84
+      height: 50
+      sliceName: '- Workflow Steps'
+      uuid: 726f28c7-eb47-4476-b095-ddde44346d88
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-G8XskONnhJ
+    type: CHART
+  CHART-ZnLUzcXoZu:
+    children: []
+    id: CHART-ZnLUzcXoZu
+    meta:
+      chartId: 83
+      height: 50
+      sliceName: '- Duration trend'
+      uuid: d76b9dd4-ed9d-4d25-b550-2b2bcbb40298
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-X5a9yeojw
+    type: CHART
+  CHART-hjX4ItmI6Q:
+    children: []
+    id: CHART-hjX4ItmI6Q
+    meta:
+      chartId: 89
+      height: 50
+      sliceName: Step Success Rate
+      uuid: 202ab070-e4b3-4bc9-9812-cf15aeaf0266
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-Sm4vu02PK
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-X5a9yeojw
+    - ROW-G8XskONnhJ
+    - ROW-Sm4vu02PK
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: CIAnalyzer -- Per Workflow
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-G8XskONnhJ:
+    children:
+    - CHART-SPq3MvZ4J3
+    - CHART-HGPUuwhFtd
+    id: ROW-G8XskONnhJ
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-Sm4vu02PK:
+    children:
+    - CHART-hjX4ItmI6Q
+    id: ROW-Sm4vu02PK
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-X5a9yeojw:
+    children:
+    - CHART-ZnLUzcXoZu
+    id: ROW-X5a9yeojw
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  show_native_filters: true
+  chart_configuration:
+    '83':
+      id: 83
+      crossFilters:
+        scope:
+          rootPath:
+          - ROOT_ID
+          excluded:
+          - 83
+    '84':
+      id: 84
+      crossFilters:
+        scope:
+          rootPath:
+          - ROOT_ID
+          excluded:
+          - 84
+    '89':
+      id: 89
+      crossFilters:
+        scope:
+          rootPath:
+          - ROOT_ID
+          excluded:
+          - 89
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  default_filters: '{}'
+  native_filter_configuration:
+  - id: NATIVE_FILTER-RuXk8c9f6
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Repository
+    filterType: filter_select
+    targets:
+    - column:
+        name: repository
+      datasetUuid: 0bba67c5-364a-46f2-967d-fa9dc01e3392
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 83
+    - 84
+    - 85
+    - 89
+    tabsInScope: []
+  - id: NATIVE_FILTER-vqYBtvNnE
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Workflow Name
+    filterType: filter_select
+    targets:
+    - column:
+        name: workflowname
+      datasetUuid: 0bba67c5-364a-46f2-967d-fa9dc01e3392
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-RuXk8c9f6
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 83
+    - 84
+    - 85
+    - 89
+    tabsInScope: []
+  shared_label_colors: {}
+version: 1.0.0

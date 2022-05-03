@@ -1,0 +1,15 @@
+database_name: CIAnalyzer (Amazon Athena)
+sqlalchemy_uri: <>
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_file_upload: false
+extra:
+  metadata_params: {}
+  engine_params: {}
+  metadata_cache_timeout: {}
+  schemas_allowed_for_file_upload: []
+uuid: 64647bbb-aab4-40df-a83d-ea00d65e70a6
+version: 1.0.0

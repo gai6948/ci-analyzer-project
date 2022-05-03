@@ -1,0 +1,97 @@
+dashboard_title: CIAnalyzer -- Workflows
+description: null
+css: ''
+slug: null
+uuid: ac5da6a5-fc2e-4f4f-ab7b-0232b6f238bb
+position:
+  CHART-TS9uySTjw2:
+    children: []
+    id: CHART-TS9uySTjw2
+    meta:
+      chartId: 80
+      height: 50
+      sliceName: '- Workflow Runs by branch'
+      uuid: e7ac6b18-bd15-4e37-94d4-ab69f80677ab
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-VWPi4CV1x
+    type: CHART
+  CHART-lPR2VhvEV5:
+    children: []
+    id: CHART-lPR2VhvEV5
+    meta:
+      chartId: 81
+      height: 50
+      sliceName: '- Workflow Success/Failure'
+      uuid: 8b17a150-474b-4807-827f-69eb417732f5
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-VWPi4CV1x
+    type: CHART
+  CHART-ufomICz5rv:
+    children: []
+    id: CHART-ufomICz5rv
+    meta:
+      chartId: 82
+      height: 50
+      sliceName: '- Weekly Workflow Runs'
+      uuid: d0c9f538-9c66-4dbb-9eae-feb6228b280d
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-VWPi4CV1x
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-VWPi4CV1x
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: CIAnalyzer -- Workflows
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-VWPi4CV1x:
+    children:
+    - CHART-ufomICz5rv
+    - CHART-TS9uySTjw2
+    - CHART-lPR2VhvEV5
+    id: ROW-VWPi4CV1x
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  show_native_filters: true
+  chart_configuration:
+    '81':
+      id: 81
+      crossFilters:
+        scope:
+          rootPath:
+          - ROOT_ID
+          excluded:
+          - 81
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  default_filters: '{}'
+version: 1.0.0

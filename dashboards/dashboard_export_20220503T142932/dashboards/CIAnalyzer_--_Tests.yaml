@@ -1,0 +1,84 @@
+dashboard_title: CIAnalyzer -- Tests
+description: null
+css: ''
+slug: null
+uuid: 3594be36-ffe2-48bd-a35c-6eb5ce87a5b0
+position:
+  CHART-qjIfvmyP2Z:
+    children: []
+    id: CHART-qjIfvmyP2Z
+    meta:
+      chartId: 91
+      height: 50
+      sliceName: Testcase Details
+      uuid: 16e93dc6-30d0-4a17-a6f2-d3f291c26f3e
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-r_VO1Jqvp1
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-r_VO1Jqvp1
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: CIAnalyzer -- Tests
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-r_VO1Jqvp1:
+    children:
+    - CHART-qjIfvmyP2Z
+    id: ROW-r_VO1Jqvp1
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  show_native_filters: true
+  chart_configuration: {}
+  shared_label_colors: {}
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  default_filters: '{}'
+  native_filter_configuration:
+  - id: NATIVE_FILTER-qtS7mPlSo
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Repository
+    filterType: filter_select
+    targets:
+    - column:
+        name: repository
+      datasetUuid: 6f75a436-3077-4b18-a7fd-59b78f72a1a7
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+version: 1.0.0
