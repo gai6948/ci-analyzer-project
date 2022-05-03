@@ -144,3 +144,22 @@ resource "aws_glue_trigger" "ci_analyzer" {
     job_name = aws_glue_job.ci_analyzer.name
   }
 }
+
+resource "aws_glue_trigger" "ci_analyzer_crawler" {
+  name = "ci-analyzer-crawler-trigger"
+  type = "CONDITIONAL"
+
+  predicate {
+    conditions {
+      job_name = aws_glue_job.ci_analyzer.name
+      state    = "SUCCEEDED"
+    }
+  }
+  actions {
+    crawler_name = aws_glue_crawler.ci_analyzer_workflows.name
+  }
+  actions {
+    crawler_name = aws_glue_crawler.ci_analyzer_tests.name
+  }
+
+}
